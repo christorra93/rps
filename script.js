@@ -53,7 +53,9 @@ function playRound(player,com) {
 
 function game() {
 
-    for (i = 0 ; i < 5 ; i++) {
+    let noVictor = true;
+
+    while (noVictor) {
         let invalidAnswer = true;
 
         while(invalidAnswer) {
@@ -67,14 +69,16 @@ function game() {
         computer = getComputerChoice();
 
         playRound(player,computer);
+
+        if (win == 5 || lose == 5) {
+            noVictor = false;
+        }
     }
 
     if (win > lose) {
         console.log(`You won the game! ${win} to ${lose}`);
     } else if (win < lose) {
         console.log(`You lost the game! ${lose} to ${win}`);
-    } else {
-        console.log("The game is tied!");
     }
 
 }
