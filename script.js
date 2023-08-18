@@ -23,23 +23,29 @@ function playRound(player,com) {
             } else if (com === 'paper') {
                 console.log("You lose! paper beats rock.");
             }
+            break;
         case 'paper':
             if (com === 'rock') {
                 console.log("You win! paper beats rock.");
             } else if (com === 'scissors') {
                 console.log("You lose! scissors beats paper.");
             }
+            break;
         case 'scissors':
             if (com === 'paper') {
                 console.log("You win! scissors beats paper.");
             } else if (com === 'rock') {
                 console.log("You lose! rock beats scissors.");
             }
+            break;
     }
     if (player === com) {
         console.log("It's a tie!");
     }
 }
 
-let player;
-let computer;
+let player = prompt("Rock paper or scissors?","").toLowerCase();
+let computer = getComputerChoice();
+
+playRound(player,computer);
+
