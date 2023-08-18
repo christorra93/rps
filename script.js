@@ -53,14 +53,17 @@ function playRound(player,com) {
 
 function game() {
 
-    let player;
-    let computer;
-    let win = 0;
-    let lose 0;
-
     for (i = 0 ; i < 5 ; i++) {
+        let invalidAnswer = true;
 
-        player = prompt("Rock paper or scissors?","").toLowerCase();
+        while(invalidAnswer) {
+            player = prompt("Rock paper or scissors?","").toLowerCase();
+
+            if (player === 'rock' || player === 'paper' || player === 'scissors') {
+                invalidAnswer = false;
+            }
+        }
+
         computer = getComputerChoice();
 
         playRound(player,computer);
@@ -71,10 +74,14 @@ function game() {
     } else if (win < lose) {
         console.log(`You lost the game! ${lose} to ${win}`);
     } else {
-        console.log("It's a tie!");
+        console.log("The game is tied!");
     }
 
 }
+let player;
+let computer;
+let win = 0;
+let lose = 0;
 
 game();
 
