@@ -15,4 +15,31 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function playRound(player,com) {
+    switch (player) {
+        case 'rock':
+            if (com === 'scissors') {
+                console.log("You win! rock beats scissors.");
+            } else if (com === 'paper') {
+                console.log("You lose! paper beats rock.");
+            }
+        case 'paper':
+            if (com === 'rock') {
+                console.log("You win! paper beats rock.");
+            } else if (com === 'scissors') {
+                console.log("You lose! scissors beats paper.");
+            }
+        case 'scissors':
+            if (com === 'paper') {
+                console.log("You win! scissors beats paper.");
+            } else if (com === 'rock') {
+                console.log("You lose! rock beats scissors.");
+            }
+    }
+    if (player === com) {
+        console.log("It's a tie!");
+    }
+}
+
+let player;
+let computer;
