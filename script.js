@@ -19,8 +19,6 @@ function random(number){
 
 function rgb(){
     h1.style.color = `rgb(${random(255)},${random(255)},${random(255)})`;
-    result.style.color = `rgb(${random(255)},${random(255)},${random(255)})`;
-    score.style.color = `rgb(${random(255)},${random(255)},${random(255)})`;
 }
 
 setInterval(rgb,500);
