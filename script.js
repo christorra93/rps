@@ -15,7 +15,7 @@ function getComputerChoice() {
     }
 }
 
-function playRound(player,com) {
+function playRound() {
     switch (player) {
         case 'rock':
             if (com === 'scissors') {
@@ -50,47 +50,8 @@ function playRound(player,com) {
         console.log("It's a tie!");
     }
 }
-// function checkAnswer() {
-//     let invalidAnswer = true;
-//     let answer;
 
-//     while(invalidAnswer) {
-//         answer = prompt("Rock paper or scissors?","paper").toLowerCase();
 
-//         if (answer === 'rock' || answer === 'paper' || answer === 'scissors') {
-//                 invalidAnswer = false;
-//         }
-//     }
-
-//     return answer;
-
-// }
-function game() {
-
-    let noVictor = true;
-
-    while (noVictor) {
-        
-        player = prompt('r p s?','');
-
-        computer = getComputerChoice();
-
-        playRound(player,computer);
-
-        if (win == 5 || lose == 5) {
-            noVictor = false;
-        }
-    }
-
-    if (win > lose) {
-        console.log(`You won the game! ${win} to ${lose}`);
-    } else if (win < lose) {
-        console.log(`You lost the game! ${lose} to ${win}`);
-    }
-
-}
-let player;
-let computer;
 let win = 0;
 let lose = 0;
 
