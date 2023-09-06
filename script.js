@@ -66,7 +66,7 @@ function playRound(e) {
     }
 
     if (e.target.textContent === com) {
-        result.textContent = "Its a tie!";
+        result.textContent = "It's a tie!";
         score.textContent = `Your score: ${win} - computer score:${lose}`;
     }
 
