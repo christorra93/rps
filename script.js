@@ -50,28 +50,28 @@ function playRound(player,com) {
         console.log("It's a tie!");
     }
 }
-function checkAnswer() {
-    let invalidAnswer = true;
-    let answer;
+// function checkAnswer() {
+//     let invalidAnswer = true;
+//     let answer;
 
-    while(invalidAnswer) {
-        answer = prompt("Rock paper or scissors?","").toLowerCase();
+//     while(invalidAnswer) {
+//         answer = prompt("Rock paper or scissors?","paper").toLowerCase();
 
-        if (answer === 'rock' || answer === 'paper' || answer === 'scissors') {
-                invalidAnswer = false;
-        }
-    }
+//         if (answer === 'rock' || answer === 'paper' || answer === 'scissors') {
+//                 invalidAnswer = false;
+//         }
+//     }
 
-    return answer;
+//     return answer;
 
-}
+// }
 function game() {
 
     let noVictor = true;
 
     while (noVictor) {
         
-        player = checkAnswer();
+        player = prompt('r p s?','');
 
         computer = getComputerChoice();
 
