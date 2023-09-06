@@ -41,4 +41,5 @@ button {
     border: 5px solid black;
     border-radius: 10px;
     margin: 10px auto;
+    text-align: center;
 }

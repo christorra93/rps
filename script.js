@@ -1,3 +1,12 @@
+const rps = document.querySelector('#container');
+
+const score = document.querySelector('#score p');
+
+const result = document.querySelector('#result p');
+
+let win = 0;
+let lose = 0;
+
 //this is to get a random number between 0 and 2.
 
 function getRandomNum() {
@@ -15,45 +24,53 @@ function getComputerChoice() {
     }
 }
 
-function playRound() {
-    switch (player) {
+function playRound(e) {
+
+    let com = getComputerChoice();
+
+    switch (e.target.textContent) {
         case 'rock':
             if (com === 'scissors') {
-                console.log("You win! rock beats scissors.");
                 win++;
+                result.textContent = "You win! rock beats scissors.";
+                score.textContent = `Your score: ${win} - computer score:${lose}`;
+                
             } else if (com === 'paper') {
-                console.log("You lose! paper beats rock.");
                 lose++;
+                result.textContent = "You lose! paper beats rock.";
+                score.textContent = `Your score: ${win} - computer score:${lose}`;
             }
             break;
         case 'paper':
             if (com === 'rock') {
-                console.log("You win! paper beats rock.");
                 win++;
+                result.textContent = "You win! paper beats rock.";
+                score.textContent = `Your score: ${win} - computer score:${lose}`;
             } else if (com === 'scissors') {
-                console.log("You lose! scissors beats paper.");
                 lose++;
+                result.textContent = "You lose! scissors beats paper.";
+                score.textContent = `Your score: ${win} - computer score:${lose}`;
             }
             break;
         case 'scissors':
             if (com === 'paper') {
-                console.log("You win! scissors beats paper.");
                 win++;
+                result.textContent = "You win! scissors beats paper.";
+                score.textContent = `Your score: ${win} - computer score:${lose}`;
             } else if (com === 'rock') {
-                console.log("You lose! rock beats scissors.");
                 lose++;
+                result.textContent = "You lose! rock beats scissors.";
+                score.textContent = `Your score: ${win} - computer score:${lose}`;
             }
             break;
     }
 
-    if (player === com) {
-        console.log("It's a tie!");
+    if (e.target.textContent === com) {
+        result.textContent = "Its a tie!";
+        score.textContent = `Your score: ${win} - computer score:${lose}`;
     }
 }
 
+rps.addEventListener('click',playRound);
 
-let win = 0;
-let lose = 0;
-
-game();
 
