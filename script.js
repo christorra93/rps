@@ -1,5 +1,5 @@
 const rps = document.querySelector('#container');
-
+const h1 = document.querySelector('h1');
 const score = document.querySelector('#score p');
 const resultDiv = document.querySelector('#result');
 const result = document.querySelector('#result p');
@@ -12,6 +12,18 @@ let lose = 0;
 function getRandomNum() {
     return Math.floor(Math.random() * 3);
 }
+
+function random(number){
+    return Math.floor(Math.random() * (number + 1));
+}
+
+function rgb(){
+    h1.style.color = `rgb(${random(255)},${random(255)},${random(255)})`;
+    result.style.color = `rgb(${random(255)},${random(255)},${random(255)})`;
+    score.style.color = `rgb(${random(255)},${random(255)},${random(255)})`;
+}
+
+setInterval(rgb,500);
 
 function getComputerChoice() {
     switch (getRandomNum()) {
