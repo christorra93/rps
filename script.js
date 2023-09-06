@@ -1,7 +1,7 @@
 const rps = document.querySelector('#container');
 
 const score = document.querySelector('#score p');
-
+const resultDiv = document.querySelector('#result');
 const result = document.querySelector('#result p');
 
 let win = 0;
@@ -69,6 +69,32 @@ function playRound(e) {
         result.textContent = "Its a tie!";
         score.textContent = `Your score: ${win} - computer score:${lose}`;
     }
+
+    if(win == 5){
+        result.textContent = `You win the game!`;
+        replayGame();
+    } else if(lose == 5){
+        result.textContent = `The computer wins the game!`;
+        replayGame();
+    }
+}
+
+function replayGame(){
+    const btn = document.createElement('button');
+    btn.textContent = "Play Again";
+    btn.style.display = 'block';
+    btn.style.margin = '10px auto';
+    document.body.insertBefore(btn,resultDiv);
+    rps.removeEventListener('click',playRound);
+
+    btn.addEventListener('click',() => {
+        result.textContent = '';
+        score.textContent = '';
+        win = 0;
+        lose = 0;
+        rps.addEventListener('click',playRound);
+        document.body.removeChild(btn);
+    });
 }
 
 rps.addEventListener('click',playRound);
